@@ -14,6 +14,8 @@ export class CreateEventComponent implements OnInit {
 
   events: any = [];
 
+  loading: boolean = true;
+
   constructor(private formBuilder: FormBuilder, private angularFire: AngularFireDatabase) { }
 
   ngOnInit() {
@@ -24,6 +26,7 @@ export class CreateEventComponent implements OnInit {
     });
 
     this.events = this.angularFire.list('events');
+    this.events.subscribe(() => this.loading = false);
   }
 
   onSubmit() {
