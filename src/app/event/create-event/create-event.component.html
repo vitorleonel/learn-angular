@@ -1,10 +1,14 @@
 <div class="wrapper">
 
 	<div class="content">
-		<h2>Events list</h2>
+		<h2>Events</h2>
 
-		<div class="errors" *ngIf="!(events | async)?.length > 0">
-			Não existe nenhum evento cadastrado.
+		<div class="errors" *ngIf="!(events | async)?.length && !loading">
+			No exists events in system.
+		</div>
+
+		<div class="loading" *ngIf="loading">
+			Loading...
 		</div>
 
 		<ul>
