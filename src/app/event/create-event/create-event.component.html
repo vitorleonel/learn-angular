@@ -3,12 +3,12 @@
 	<div class="content">
 		<h2>Events list</h2>
 
-		<div class="errors" *ngIf="!events.length > 0">
+		<div class="errors" *ngIf="!(events | async)?.length > 0">
 			Não existe nenhum evento cadastrado.
 		</div>
 
 		<ul>
-			<li *ngFor="let event of events">
+			<li *ngFor="let event of events | async">
 				<span>
 					<strong>{{ event.name }}</strong> - <small>{{ event.address }}</small>
 				</span>
