@@ -5,7 +5,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## before run application
 
-Create file "firebase.configs.ts" on path "src/environments" with this content:
+1 - Install firebase functions dependencies with command "npm install" in your terminal in path "/functions".
+
+2 - Create file "firebase.configs.ts" on path "src/environments" with this content:
 
 ```javascript
 export const FirebaseConfig = {
