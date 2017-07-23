@@ -31,6 +31,11 @@
 	border-top-right-radius: 5px;
 }
 
+.wrapper .content > ul li > p {
+	width: 100%;
+	white-space: pre-wrap;
+}
+
 .wrapper .content > ul li + li {
 	border-top: 1px solid #eee;
 	margin-top: 1rem;
