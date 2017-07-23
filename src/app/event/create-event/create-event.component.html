@@ -1,0 +1,36 @@
+<div class="wrapper">
+
+	<div class="content">
+		<h2>Events list</h2>
+
+		<div class="errors" *ngIf="!events.length > 0">
+			Não existe nenhum evento cadastrado.
+		</div>
+
+		<ul>
+			<li *ngFor="let event of events">
+				<span>
+					<strong>{{ event.name }}</strong> - <small>{{ event.address }}</small>
+				</span>
+				<p>{{ event.description }}</p>
+			</li>
+		</ul>
+	</div>
+	
+	<div class="content">
+		<h2>Create event</h2>
+
+		<form [formGroup]="form" (submit)="onSubmit()" novalidate>
+			
+			<input type="text" formControlName="name" class="input" placeholder="Name" required />
+
+			<input type="text" formControlName="address" class="input" placeholder="Address" required />
+
+			<textarea formControlName="description" rows="5" class="input" placeholder="Description" required></textarea>
+
+			<button type="submit" class="button wisteria" [disabled]="!form.valid">Create</button>
+
+		</form>
+	</div>
+
+</div>
